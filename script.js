@@ -6,8 +6,15 @@ class Model {
       { id: 3, text: "Learn React next", completed: false }
     ];
   }
-}
 
+  addToDo(todoText) {
+    const todo = {
+      id: this.todos.length > 0 ? this.todos[this.todo.length - 1].id + 1 : 1,
+      text: todoText,
+      completed: false
+    };
+  }
+}
 class View {
   constructor() {}
 }

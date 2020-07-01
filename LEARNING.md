@@ -22,3 +22,13 @@ Controller - This connects the model and the view together. It takes the users i
 Its initially best to focus on the model as this doesnt have to handle any sort of events or DOM manipulation. It's simply storing and modifying data.
 
 The state of the model is an array of objects populated with some pre made data. Each object consists of an id, text and whether it's completed or not, intially completed will be set to false.
+
+Create addToDo method where an instance of todo takes in the usual 3 objects:
+
+id: asks whether the length of the todo's id is greater than zero, if so take take the length of the todo's id and add 1, if not stay at 1.
+
+_Ternary Operators - Remember these are used when something should evaluate to true or false. Anything before the ? is the condition, before the question mark is the first expression, after the question mark is the second expression_
+
+text: takes the argument todoText
+
+completed: false

@@ -9,7 +9,7 @@ class Model {
 
   addToDo(todoText) {
     const todo = {
-      id: this.todos.length > 0 ? this.todos[this.todo.length - 1].id + 1 : 1,
+      id: this.todos.length > 0 ? this.todos[this.todos.length - 1].id + 1 : 1,
       text: todoText,
       complete: false
     };

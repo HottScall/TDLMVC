@@ -48,3 +48,13 @@ Filter a todo out of the array by id
 Toggle Todo:
 
 Map through all the todo's and check that the todo.id is equal to the id. Then the todo is either not todo.complete (remember that completed is originally set as flase, this is the opposite of false) or the to do remains the same.
+
+Conclusion of Model: So now we have a a created model with methods which do all of the things through CRUD. We can create todos, edit them, delete them and toggle them as completed.
+
+You should now be able to test this out in the browser, you won't see anything because there is no view but you can use the console to add and delete them using commands like:
+
+app.model.addToDo('get lagging')
+
+then check the todos array with:
+
+app.model.todos

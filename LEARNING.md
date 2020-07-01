@@ -44,3 +44,7 @@ Map through all the todos and replace the text of the todo with the specified id
 Delete Todo:
 
 Filter a todo out of the array by id
+
+Toggle Todo:
+
+Map through all the todo's and check that the todo.id is equal to the id. Then the todo is either not todo.complete (remember that completed is originally set as flase, this is the opposite of false) or the to do remains the same.

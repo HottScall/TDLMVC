@@ -1,9 +1,9 @@
 class Model {
   constructor() {
     this.todos = [
-      { id: 1, text: "Learn MVC", completed: false },
-      { id: 2, text: "Learn Javascript", completed: false },
-      { id: 3, text: "Learn React next", completed: false }
+      { id: 1, text: "Learn MVC", complete: false },
+      { id: 2, text: "Learn Javascript", complete: false },
+      { id: 3, text: "Learn React next", complete: false }
     ];
   }
 
@@ -11,7 +11,7 @@ class Model {
     const todo = {
       id: this.todos.length > 0 ? this.todos[this.todo.length - 1].id + 1 : 1,
       text: todoText,
-      completed: false
+      complete: false
     };
     this.todos.push(todo);
   }
@@ -19,13 +19,22 @@ class Model {
   editToDo(id, updatedText) {
     this.todos = this.todo.map(todo =>
       todo.id === id
-        ? { id: todo.id, text: updatedText, completed: todo.completed }
+        ? { id: todo.id, text: updatedText, complete: todo.complete }
         : todo
     );
   }
 
   deleteToDo(id) {
     this.todos = this.todos.filter(todo => todo.id !== id);
+  }
+
+  toggleToDo(id) {
+    this.todos = this.todos.map(
+      todo =>
+        (todo.id = id
+          ? { id: todo.id, text: todo.text, complete: !todo.complete }
+          : todo)
+    );
   }
 }
 

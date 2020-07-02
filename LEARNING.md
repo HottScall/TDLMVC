@@ -78,3 +78,7 @@ _Read about creating and getting Elements. This is important information to know
 - Ensure to make all these variables so you can easily access them throughout your code.
 
 _Note_ Ensure that you understand creating Elements, getting Elements and the .notation calls such as type, placeholder, textContext and append!
+
+- Now create a getter and a resetter method, set them both as private methods (with underscores) to ensure they are not used outside of the class.
+
+This now finishes the set up of the view with the most complex part coming next, displaying the todos and ensuring they are added or deleted upon user request.

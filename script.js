@@ -39,7 +39,21 @@ class Model {
 }
 
 class View {
-  constructor() {}
+  constructor() {
+    // this communicates with the root in HTML file to render the below
+    this.app = this.getElement("#root");
+
+    // The title of the application
+    this.title = this.createElement("h1");
+    this.title.getContext = "To Do's ";
+
+    this.form = this.createElement("form");
+
+    this.input = this.createElement("input");
+    this.input.type = "text";
+    this.input.placeholder = "Add To Do";
+    this.input.name = "todo";
+  }
 
   createElement(tag, className) {
     const tag = document.createElement(tag);

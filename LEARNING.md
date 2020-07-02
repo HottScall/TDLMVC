@@ -58,3 +58,21 @@ app.model.addToDo('get lagging')
 then check the todos array with:
 
 app.model.todos
+
+<h5 align="centre">View</h5>
+
+_Note_ Neither the Model or the Controller should know any details of the view, the view should represent the DOM, HTML and CSS only.
+
+- Create helper methods for to both retrieve and create and element.
+- Firstly create an element with an optional css tag
+
+_Read about creating and getting Elements. This is important information to know_
+
+- Now within the constructor you set up all the things that you will need within your view which includes;
+
+  - The root element of the app (#root)
+  - The title heading (h1)
+  - The form, the input and the submit button (form, input and submit)
+  - The rendered list (ul)
+
+- Ensure to make all these variables so you can easily access them throughout your code.

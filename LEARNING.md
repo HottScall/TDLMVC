@@ -76,3 +76,5 @@ _Read about creating and getting Elements. This is important information to know
   - The rendered list (ul)
 
 - Ensure to make all these variables so you can easily access them throughout your code.
+
+_Note_ Ensure that you understand creating Elements, getting Elements and the .notation calls such as type, placeholder, textContext and append!

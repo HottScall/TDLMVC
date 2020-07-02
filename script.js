@@ -57,26 +57,26 @@ class View {
 
     // The Submit button
     this.submitButton = this.createElement("button");
-    this.submitButton.getContext("Submit");
+    this.submitButton.getContext = "Submit";
 
     // The visual representation of the to do list
-    this.toDoList = this.createElement("ul", "To Do List");
+    this.toDoList = this.createElement("ul", "todo-list");
 
     //Append the input and submit button to the form
-    this.form.append(this.title, this.form, this.toDoList);
+    this.form.append(this.input, this.submitButton);
 
     // Append the title, form and todo list to the app
     this.app.append(this.title, this.form, this.toDoList);
   }
 
   createElement(tag, className) {
-    const tag = document.createElement(tag);
+    const element = document.createElement(tag);
     if (className) element.classList.add(className);
     return element;
   }
 
   getElement(selector) {
-    const selector = document.querySelector(selector);
+    const element = document.querySelector(selector);
 
     return element;
   }

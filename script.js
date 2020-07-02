@@ -47,12 +47,26 @@ class View {
     this.title = this.createElement("h1");
     this.title.getContext = "To Do's ";
 
+    // The form element
     this.form = this.createElement("form");
 
     this.input = this.createElement("input");
     this.input.type = "text";
     this.input.placeholder = "Add To Do";
     this.input.name = "todo";
+
+    // The Submit button
+    this.submitButton = this.createElement("button");
+    this.submitButton.getContext("Submit");
+
+    // The visual representation of the to do list
+    this.toDoList = this.createElement("ul", "To Do List");
+
+    //Append the input and submit button to the form
+    this.form.append(this.title, this.form, this.toDoList);
+
+    // Append the title, form and todo list to the app
+    this.app.append(this.title, this.form, this.toDoList);
   }
 
   createElement(tag, className) {

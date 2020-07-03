@@ -69,6 +69,21 @@ class View {
     this.app.append(this.title, this.form, this.toDoList);
   }
 
+  displayTodo() {
+    // Delete all the nodes upon any action being taken
+    while (this.todoList.firstChild) {
+      this.toDoList.removeChild(this.toDoList.firstChild);
+    }
+
+    // show the default message
+    if (todos.length === 0) {
+      const p = this.createElement("p");
+      p.textContext("Nothing to do. Add something to do!");
+      this.toDoList.append(p);
+    } else {
+    }
+  }
+
   createElement(tag, className) {
     const element = document.createElement(tag);
     if (className) element.classList.add(className);

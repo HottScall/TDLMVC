@@ -82,3 +82,9 @@ _Note_ Ensure that you understand creating Elements, getting Elements and the .n
 - Now create a getter and a resetter method, set them both as private methods (with underscores) to ensure they are not used outside of the class.
 
 This now finishes the set up of the view with the most complex part coming next, displaying the todos and ensuring they are added or deleted upon user request.
+
+Displaying Todo's.
+
+We have created a ul element for the todo's, but in order to display them we need to create a displayTodo method which will reset the list and display the new list every time a user creates, deletes, edits or check's off a to do. This will keep the view in sync with the model.
+
+So the first thing we need to do is remove all the todo nodes everytime it's called then run a check whether there are any to do's already exist, if they don't then we'll display an empty list message to the user.

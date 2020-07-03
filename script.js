@@ -81,6 +81,11 @@ class View {
       p.textContext("Nothing to do. Add something to do!");
       this.toDoList.append(p);
     } else {
+      // create a todo item node for each todo in state
+      todos.forEach(todo => {
+        const li = this.createElement("li");
+        li.id = todo.id;
+      });
     }
   }
 

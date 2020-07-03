@@ -87,4 +87,7 @@ Displaying Todo's.
 
 We have created a ul element for the todo's, but in order to display them we need to create a displayTodo method which will reset the list and display the new list every time a user creates, deletes, edits or check's off a to do. This will keep the view in sync with the model.
 
-So the first thing we need to do is remove all the todo nodes everytime it's called then run a check whether there are any to do's already exist, if they don't then we'll display an empty list message to the user.
+So the first thing we need to do is remove all the todo nodes everytime it's called then run a check whether there are any to do's already exist...
+
+- if there are no todo's then we'll display an empty list message to the user.
+- else we'll loop through the todo's and diplay a checkbox, span and a delete button for each to do

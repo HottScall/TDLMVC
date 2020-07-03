@@ -107,6 +107,14 @@ class View {
         // Just displat the text
         span.textContext = todo.text;
       }
+
+      // The todo's will also have a delete button
+      const deleteButton = this.createElement("button", "delete");
+      deleteButton.textContext = "delete";
+      li.append("checkbox", "span", "deleteButton");
+
+      // Append nodes to the todo list
+      this.toDoList.append(li);
     }
   }
 

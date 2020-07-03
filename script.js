@@ -96,6 +96,17 @@ class View {
       const span = this.createElement("span");
       span.contenteditable = true;
       span.classList.add("editable");
+
+      // if the todo list is completed it will have a strikethrough
+
+      if (todo.complete) {
+        const strike = createElement("s");
+        strike.textContext = todo.text;
+        span.append(strike);
+      } else {
+        // Just displat the text
+        span.textContext = todo.text;
+      }
     }
   }
 

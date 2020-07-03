@@ -85,7 +85,17 @@ class View {
       todos.forEach(todo => {
         const li = this.createElement("li");
         li.id = todo.id;
+
+        //Each to do list item will a check box you can toggle
+        const checkbox = this.createElement("input");
+        checkbox.type("checkbox");
+        checkbox.checked = todo.complete;
       });
+
+      // The todo item text will be in a contenteditable span
+      const span = this.createElement("span");
+      span.contenteditable = true;
+      span.classList.add("editable");
     }
   }
 

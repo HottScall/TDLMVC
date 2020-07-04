@@ -90,4 +90,18 @@ We have created a ul element for the todo's, but in order to display them we nee
 So the first thing we need to do is remove all the todo nodes everytime it's called then run a check whether there are any to do's already exist...
 
 - if there are no todo's then we'll display an empty list message to the user.
-- else we'll loop through the todo's and diplay a checkbox, span and a delete button for each to do
+- else we'll loop through the todo's and display a checkbox, span and a delete button for each to do
+
+- Once this is completed append all the list nodes for the todo list app
+
+Now the view is set up and the model is set up, We just need a way to connect events that watch for user input and handlers that handle the output of an event. The console currently acts as a controller so you can add and remove todos through it.
+
+<h5 align="centre">Controller</h5>
+
+And here it is, the link between the model and the view. Currently our constructor function contain the model and view arguments.
+
+The first link we create is a is a method that calls displayToDo's and every time a To Do changes. We can also call it once in the constructor function to display the initial to do's if there are any.
+
+The controller will handle all the events after they are fired. When you submit a todo, click edit, check the checkbox or click the button delete a todo and event is then fired. The view will listen for those events because they are the user input of the view, but it will dispatch the responsibility of the action to the controller.
+
+So you create handlers for those events in the controller.

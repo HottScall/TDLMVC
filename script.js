@@ -130,7 +130,7 @@ class View {
     return element;
   }
 
-  _getTodo() {
+  get _todoText() {
     return this.input.value;
   }
 
@@ -142,7 +142,13 @@ class View {
 class Controller {
   constructor(model, view) {
     (this.model = model), (this.view = view);
+
+    // display the initial todo's (if any)
+    this.onTodoListChanged(this.model.todos);
   }
+  onTodoListChanged = todos => {
+    this.view.displayTodo(todos);
+  };
 }
 
 const app = new Controller(new Model(), new View());

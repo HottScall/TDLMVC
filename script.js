@@ -146,8 +146,25 @@ class Controller {
     // display the initial todo's (if any)
     this.onTodoListChanged(this.model.todos);
   }
+
   onTodoListChanged = todos => {
     this.view.displayTodo(todos);
+  };
+
+  handleAddTodo = todoText => {
+    this.model.addToDo(todoText);
+  };
+
+  handleEditTodo = (id, todoText) => {
+    this.model.editToDo(id, todoText);
+  };
+
+  handleDeleteTodo = id => {
+    this.model.deleteToDo(id);
+  };
+
+  handleToggleTodo = id => {
+    this.model.toggleToDo(id);
   };
 }
 

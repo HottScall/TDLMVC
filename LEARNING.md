@@ -106,6 +106,22 @@ The controller will handle all the events after they are fired. When you submit 
 
 So you create handlers for those events in the controller. See lines 150 - 166.
 
-Setting up event listeners:
+<h3 align="centre">Setting up event listeners</h3>
 
-So the handles are in place but now we must flip back to the view and add event listeners. We'll respond to the submit, click and change events on the todo list.
+So the handles are in place but now we must flip back to the view and add event listeners. We'll respond to the submit, click and change events on the todo list. See 175 - 205.
+
+We now need to call the handler from the view so you now bind the methods that are listening for the events in the view's constructor function. Skip the edit one for now (as this is difficult). See 155 - 157
+
+<h3 align="centre">Respond to callback methods</h3>
+
+So, the events are now listening and the handlers are invoked but still nothing happens. This is because the model doesn't know that the view should update. We have the _displayTodos_ method on the view to solve this, but remember the model and the view shouldn't know about each other!!
+
+Just like with events, the model should fire back to the controller to let it know that something happened.
+
+We've already made the _onTodoListChanged_ method on the controller to deal with this so we just have to make the model aware. We bind it to the model the same way we did with the handlers on the view.
+
+In the model, add bindTodoListChanged to the onTodoListChanged. See line 43.
+
+Then bind that into the controller just like with the view. See line 163.
+
+Now after EVERY method in the model you call the onTodoListChanged callback. See lines 18, 29, 36.

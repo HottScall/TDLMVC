@@ -104,4 +104,8 @@ The first link we create is a is a method that calls displayToDo's and every tim
 
 The controller will handle all the events after they are fired. When you submit a todo, click edit, check the checkbox or click the button delete a todo and event is then fired. The view will listen for those events because they are the user input of the view, but it will dispatch the responsibility of the action to the controller.
 
-So you create handlers for those events in the controller.
+So you create handlers for those events in the controller. See lines 150 - 166.
+
+Setting up event listeners:
+
+So the handles are in place but now we must flip back to the view and add event listeners. We'll respond to the submit, click and change events on the todo list.

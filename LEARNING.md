@@ -131,3 +131,5 @@ Now after EVERY method in the model you call the onTodoListChanged callback. See
 We're almost there!! We now just need to persist the local storage of the browser so that we can make it a little more permanent, if you refresh the page the existing todo's will remain in tack.
 
 So now remove the initial data from the Models constructor function and and set it to either the value of the local storage or an empty array.
+
+Now add a commit private method to update the value of the localStorage as well as the model's state.

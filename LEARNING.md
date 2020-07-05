@@ -1,3 +1,5 @@
+Original Source: https://www.taniarascia.com/javascript-mvc-todo-app/
+
 <h1 align="centre">MVC Model</h1>
 
 Model - This manages the data of the application, in this project that will be the actual "todo's" and the relevant methods that will allow you to create, update and delete them.
@@ -132,4 +134,6 @@ We're almost there!! We now just need to persist the local storage of the browse
 
 So now remove the initial data from the Models constructor function and and set it to either the value of the local storage or an empty array.
 
-Now add a commit private method to update the value of the localStorage as well as the model's state.
+Now add a commit private method to update the value of the localStorage as well as the model's state. See lines 6-8.
+
+And after every Todo function (add, edit, delete and toggle) you call this private method.

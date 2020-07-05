@@ -3,6 +3,10 @@ class Model {
     this.todos = JSON.parse(localStorage.getItem("todos")) || [];
   }
 
+  bindTodoListChanged(callback) {
+    this.onTodoListChanged = callback;
+  }
+
   _commit(todos) {
     this.onTodoListChanged(todos);
     localStorage.setItem("todos", JSON.stringify(todos));
@@ -17,6 +21,7 @@ class Model {
 
     this.todos.push(todo);
     this.onTodoListChanged(this.todos);
+    this._commit(this.todos);
   }
 
   // Map through all todos, and replace the text of the todo with the specified id
@@ -28,6 +33,7 @@ class Model {
     );
 
     this.onTodoListChanged(this.todos);
+    this._commit(this.todos);
   }
 
   // Filter a todo out of the array by id
@@ -35,6 +41,7 @@ class Model {
     this.todos = this.todos.filter(todo => todo.id !== id);
 
     this.onTodoListChanged(this.todos);
+    this._commit(this.todos);
   }
 
   // Flip the complete boolean on the specified todo
@@ -44,10 +51,8 @@ class Model {
         ? { id: todo.id, text: todo.text, complete: !todo.complete }
         : todo
     );
-  }
 
-  bindTodoListChanged(callback) {
-    this.onTodoListChanged = callback;
+    this._commit(this.todos);
   }
 }
 

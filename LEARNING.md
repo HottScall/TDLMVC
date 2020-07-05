@@ -125,3 +125,9 @@ In the model, add bindTodoListChanged to the onTodoListChanged. See line 43.
 Then bind that into the controller just like with the view. See line 163.
 
 Now after EVERY method in the model you call the onTodoListChanged callback. See lines 18, 29, 36.
+
+<h3 align="centre">Adding local storage</h3>
+
+We're almost there!! We now just need to persist the local storage of the browser so that we can make it a little more permanent, if you refresh the page the existing todo's will remain in tack.
+
+So now remove the initial data from the Models constructor function and and set it to either the value of the local storage or an empty array.

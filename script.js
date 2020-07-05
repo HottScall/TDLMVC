@@ -1,10 +1,6 @@
 class Model {
   constructor() {
-    this.todos = [
-      { id: 1, text: "Learn MVC", complete: false },
-      { id: 2, text: "Learn Javascript", complete: false },
-      { id: 3, text: "Learn React next", complete: false }
-    ];
+    this.todos = JSON.parse(localstorage.getItem("todos") || []);
   }
 
   addTodo(todoText) {

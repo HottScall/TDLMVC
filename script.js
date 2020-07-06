@@ -13,8 +13,18 @@ class Model {
       text: todoText,
       completed: false
     };
+    this.todos.push(todo);
+  }
+
+  editToDo(id, updatedText) {
+    this.todos = this.todo.map(todo =>
+      todo.id === id
+        ? { id: todo.id, text: updatedText, completed: todo.completed }
+        : todo
+    );
   }
 }
+
 class View {
   constructor() {}
 }

@@ -23,6 +23,8 @@ Its initially best to focus on the model as this doesnt have to handle any sort 
 
 The state of the model is an array of objects populated with some pre made data. Each object consists of an id, text and whether it's completed or not, intially completed will be set to false.
 
+AddTodo:
+
 Create addToDo method where an instance of todo takes in the usual 3 objects:
 
 id: asks whether the length of the todo's id is greater than zero, if so take take the length of the todo's id and add 1, if not stay at 1.
@@ -32,3 +34,9 @@ _Ternary Operators - Remember these are used when something should evaluate to t
 text: takes the argument todoText
 
 completed: false
+
+Then push the the todo into the todos array.
+
+Edit Todo:
+
+Map through all the todos and replace the text of the todo with the specified id

@@ -40,3 +40,7 @@ Then push the the todo into the todos array.
 Edit Todo:
 
 Map through all the todos and replace the text of the todo with the specified id
+
+Delete Todo:
+
+Filter a todo out of the array by id

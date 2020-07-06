@@ -23,6 +23,10 @@ class Model {
         : todo
     );
   }
+
+  deleteToDo(id) {
+    this.todos = this.todos.filter(todo => todo.id !== id);
+  }
 }
 
 class View {

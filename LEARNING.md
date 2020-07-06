@@ -137,3 +137,15 @@ So now remove the initial data from the Models constructor function and and set 
 Now add a commit private method to update the value of the localStorage as well as the model's state. See lines 6-8.
 
 And after every Todo function (add, edit, delete and toggle) you call this private method.
+
+<h3 align="centre">Adding live editing functionality</h3>
+
+The last piece of the puzzle! We want to make editing a synch, so a user can simply click on the text box where a todo exists and change it manually.
+
+Editing in generally trickier than adding or deleting, you want to make it so that it doesn't require a button or replace the span with an input. You also don't want to call _editTodo_ every time a user types a letter otherwise it will re-render the whole todo list UI.
+
+So we'll make a method on the view which updates a temporary state variable with the new editing value and another than then calls the handleEditTodo method which will in turn update the model. An input event is what gets fired when you type a contenteditable element and focusout fires when you leave a contenteditable element.
+
+See lines 88-89, 92-96 & 202-211.
+
+FIN.

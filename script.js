@@ -84,6 +84,17 @@ class View {
 
     // Append the title, form, and todo list to the app
     this.app.append(this.title, this.form, this.todoList);
+
+    this._temporaryTodoText = "";
+    this._initLocalListeners();
+  }
+
+  _initLocalListeners() {
+    this.todoList.addEventListener("input", event => {
+      if (event.target.className === "editable") {
+        this._temporaryTodoText = event.target.innerText;
+      }
+    });
   }
 
   // Create an element with an optional CSS class
@@ -184,6 +195,17 @@ class View {
         const id = parseInt(event.target.parentElement.id);
 
         handler(id);
+      }
+    });
+  }
+
+  bindEditTodo(handler) {
+    this.todoList.addEventListener("focusout", event => {
+      if (_this._temporaryTodoText) {
+        const id = parseInt(event.target.parseElement.id);
+
+        handler(id, this._temporaryTodoText);
+        this._temporaryTodoText = "";
       }
     });
   }
